@@ -23,7 +23,7 @@ int print_digit(va_list args)
 
 	if (digit < 10)
 		return (count_fun += _putchar(digit + '0'));
-	
+
 	digits = digit;
 
 	while (digits > 9)
