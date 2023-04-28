@@ -5,7 +5,7 @@
 
 /**
  * print_string - print a string
- * @args: user input
+ * @args: user arguements
  * Return: number of characters
  */
 int print_string(va_list args)

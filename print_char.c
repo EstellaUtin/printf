@@ -2,7 +2,7 @@
 #include <unistd.h>
 
 /**
- * print_char - prints a single character.
+ * print_char - function that prints a single character.
  * @args: list of args
  * Return: 1 which is number of charcter printed.
  */
