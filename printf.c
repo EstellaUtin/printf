@@ -7,7 +7,7 @@ void print_buffer(char buffer[], int *buff_ind);
  * _printf - function to emulate the original
  * @format: string character to be counted
  *
- * Return: number of characters printed.
+ * Return: number of count chars.
  */
 
 int _printf(const char *format, ...)
@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 		{
 			buffer[buff_ind++] = format[i];
 			if (buff_ind == BUFF_SIZE)
-				prinf_buffer(buffer, &buff_ind);
+				print_buffer(buffer, &buff_ind);
 			count_chars++;
 		}
 		else
@@ -39,10 +39,10 @@ int _printf(const char *format, ...)
 			precision = get_precision(format, &i, list);
 			size = get_size(format, &i);
 			++i;
-			printed = handle_print(format, &i, list, buffer, flags, width, precision, size);
-			if (printed == -1)
+			count = handle_print(format, &i, list, buffer, flags, width, precision, size);
+			if (count == -1)
 				return (-1);
-			count_chars += printed;
+			count_chars += count;
 		}
 	}
 
@@ -57,9 +57,9 @@ int _printf(const char *format, ...)
  * @buffer: Array of characters
  * @buff_ind: index at which to add next char
  */
-void print buffer(char buffer[], int *buff_ind)
+void print_buffer(char buffer[], int *buff_ind)
 {
-	if (buff_ind > 0)
+	if (*buff_ind > 0)
 		write(1, &buffer[0], *buff_ind);
 
 	*buff_ind = 0;

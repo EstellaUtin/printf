@@ -26,13 +26,15 @@ if (str == NULL)
 {
 	str = "(null)";
 	if (precision >= 6)
-		str = "
+		str = "      ";
 }
 while (str[length] != '\0')
 length++;
+
 if (precision >= 0 && precision < length)
 	length = precision;
-	if (width > length)
+
+if (width > length)
 {
 	if (flags & F_MINUS)
 {
@@ -41,6 +43,13 @@ if (precision >= 0 && precision < length)
 		write(1, " ", 1);
 	return (width);
 }
+else
+{
+	for (i = width - length; i > 0; i--)
+		write(1, " ", 1);
+	write(1, &str[0], length);
+	return (width);
 }
-return (write(1, str, length);
+}
+return (write(1, str, length));
 }

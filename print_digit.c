@@ -30,7 +30,7 @@ int print_digit(va_list types, char buffer[],
 
 	if (n < 0)
 	{
-		digtis = (unsigned long int) ((-1) * n);
+		digits = (unsigned long int) ((-1) * n);
 		is_negative = 1;
 	}
 
