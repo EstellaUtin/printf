@@ -56,11 +56,11 @@ int print_char(va_list types, char buffer[],
 		int flags, int width, int precision, int size);
 int print_string(va_list types, char buffer[],
 		int flags, int width, int precision, int size);
-int print_percent(va_list types, char buffer[],
+int print_mod(va_list types, char buffer[],
 		int flags, int width, int precision, int size);
 /* Function to Print numbers */
 
-int print_int(va_list types, char buffer[],
+int print_digit(va_list types, char buffer[],
 		int flags, int width, int precision, int size);
 int print_binary(va_list types, char buffer[], 
 		int flags, int width, int precision, int size);
