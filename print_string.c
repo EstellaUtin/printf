@@ -4,7 +4,7 @@
 
 /**
  * print_string - function to print a string
- * @types: list of arguements
+ * @types: list of arguments
  * @buffer: array to handle print
  * @flags: calculate active flags
  * @width: width
@@ -28,6 +28,7 @@ if (str == NULL)
 	if (precision >= 6)
 		str = "      ";
 }
+
 while (str[length] != '\0')
 length++;
 
