@@ -2,7 +2,7 @@
 #include <unistd.h>
 
 /**
- * print_percent - print %
+ * print_mod - print %
  * @types: list of arguements
  * @buffer: buffer array to handle print
  * @flags: calculate active flags
@@ -12,7 +12,7 @@
  * Return: count of chars.
  */
 
-int print_percent(va_list types, char buffer[],
+int print_mod(va_list types, char buffer[],
 		int flags, int width, int precision, int size)
 {
 	UNUSED(types);

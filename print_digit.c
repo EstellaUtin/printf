@@ -3,40 +3,44 @@
 
 /**
  * print_digit - print integers.
- *
- * @args: arguments.
+ * @types: list of args
+ * @buffer: a buffer array to handle print
+ * @flags: calculates active flags
+ * @width: get width
+ * @precision: specifies precise data type
+ * @size: size specifier
  * Return: number of characters
  */
 
-int print_digit(va_list args)
+int print_digit(va_list types, char buffer[],
+		int flags, int width, int precision, int size)
 {
-	int decimal = 1;
-	int count_fun = 0;
-	long int digit = va_arg(args, int);
-	long int digits;
+	int i = BUFF_SIZE - 2;
+	int is_negative = 0;
+	long int n = va_arg(types, long int);
+	unsigned long int digits;
 
-	if (digit < 0)
+	n = convert_size_number(n, size);
+
+	if (n == 0)
+		buffer[i--] = '0';
+
+	buffer[BUFF_SIZE - 1] = '\0';
+	digits = (unsigned long int)n;
+
+	if (n < 0)
 	{
-		count_fun += _putchar('-');
-		digit *= -1;
+		digtis = (unsigned long int) ((-1) * n);
+		is_negative = 1;
 	}
 
-	if (digit < 10)
-		return (count_fun += _putchar(digit + '0'));
-
-	digits = digit;
-
-	while (digits > 9)
+	while (digits > 0)
 	{
-		decimal *= 10;
+		buffer[i--] = (digits % 10) + '0';
 		digits /= 10;
 	}
 
-	while (decimal >= 1)
-	{
-		count_fun += _putchar(((digit / decimal) % 10) + '0');
-		decimal /= 10;
-	}
-
-	return (count_fun);
+	return (write_number(is_negative, i, buffer, flags, width, precision, size));
 }
+
+
