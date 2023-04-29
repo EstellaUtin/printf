@@ -42,5 +42,5 @@ if (precision >= 0 && precision < length)
 	return (width);
 }
 }
-return (write(1, str, length);
+return (write(1, str, length));
 }
