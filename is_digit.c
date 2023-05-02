@@ -11,6 +11,7 @@ int is_digit(char c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);
+/* hence c is not a digit */
 	else
 		return (0);
 }

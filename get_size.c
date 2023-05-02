@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * get_size - calculates the size to cast the arg
+ * get_size - calculates the size to cast the arguement
  * @format: formatted string
- * @i: list of arg to be printed
+ * @i: list of arguement to be printed
  *
- * Return: size of args.
+ * Return: size of arguements.
  */
 
 int get_size(const char *format, int *i)
